@@ -1,0 +1,121 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.infoSection {
+  width: 60%;
+  margin: 50px auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.name-row {
+  display: flex;
+  gap: 50px;
+}
+
+.field {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+
+input, select, button {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.button-container {
+  text-align: right;
+}
+
+input:focus, select:focus {
+  border-color: #008941;
+  box-shadow: 0 0 4px #008941;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background-color: white;
+  color: black;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  transition: 0.7s;
+  box-shadow: 0 0 5px #008941;
+}
+
+.header, .error-content h2, #successTitle, .modal-content h2 {
+  color: #008941;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  height: 13%;
+  width: 13%;
+  border-radius: 8px;
+}
+
+.modal, .error, .success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.modal-content, .error-content, .success-content{
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 300px;
+}
+
+.hidden  {
+  display: none;
+}
+
+.popupBtnContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popupBtnContainerError {
+  text-align: right;
+}
+
+.required {
+  color: red;
+}

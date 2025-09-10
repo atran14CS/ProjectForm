@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greene County Information Form</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="./pictures/greenecountycolor300dpi.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+</head>
+<body>
+    <section class="infoSection">
+        <form action="index.php" method="post" aria-label="Information Form">
+            <div class="header-section">
+                <h1 class="header">Greene County Information Form</h1>
+                <img src="./pictures/greenecountycolor300dpi.jpg" alt="greene county logo">
+            </div>
+            <div class="name-row">
+                <div class="field">
+                    <label for="fname">First Name<span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="fname" name="fname" aria-label="First Name"required>
+                    <p class="hidden">First name must contain only letters and spaces</p>
+                </div>
+                <div class="field">
+                    <label for="lname">Last Name<span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="lname" name="lname" aria-label="Last Name"required>
+                    <p class="hidden">Last name must contain only letters and spaces</p>
+                </div>
+            </div>
+            <div class="field">
+                 <label for="email">Email<span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" aria-label="Email Address" required>
+                <p class="hidden">Email must be valid format: local-part@domain</p>
+            </div>
+            <br>
+            <div class="field">
+                <label for="accountNum">Account Number<span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="accountNum" name="accountNum"
+                maxlength="12" pattern="[A-Za-z0-9]{12}" aria-label="Select Year from 2021 to 2025" required>
+                <p class="hidden">Account number must be alphanumeric and 12 characters long</p>
+            </div>
+            <br>
+            <div class="field">
+                <label for="year">Year<span class="required" aria-hidden="true">*</span></label>
+                <select name="year" id="year" required>
+                    <option value="default">Select Year</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+                <p class="hidden">Year must be selected 2021 to 2025</p>
+            </div>
+            <br>
+            <p>All <span class="required" aria-hidden="true">*</span> fields are required before submission</p>
+            <div class="button-container">
+                <button class="submitBtn" type="button" aria-label="Submit Form">Submit</button>
+            </div>
+        </form>
+    </section>
+    <div id="confirmModal" class="modal hidden" aria-label="Confrim Information Popup">
+        <div class="modal-content">
+            <h2>Please confirm your information</h2>
+            <div class="userInfo">
+                <ol class="userInfo-order-list">
+                </ol>
+            </div>
+            <div class="popupBtnContainer">
+                <button class="backBtn" type="button" aria-label="Go Back">Back</button>
+                <button id="confirmBtn" type="button" aria-label="Confirm Submission">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div id="errorModal" class="error hidden" aria-label="Error Popup">
+        <div class="error-content">
+            <h2>Please review following error</h2>
+            <div class="errorInfo">
+            </div>
+            <div class="popupBtnContainerError">
+                <button class="backBtn" type="button">Back</button>
+            </div>
+        </div>
+    </div>
+    <div id="successModal" class="success hidden" role="dialog" aria-label="Success Popup">
+    <div class="success-content">
+        <h2 id="successTitle">Submission Successful!</h2>
+        <p>Your information has been recorded.</p>
+        <div class="popupBtnContainer">
+            <button class="backBtn" type="button">Back to Form</button>
+        </div>
+  </div>
+</body>
+</html>
