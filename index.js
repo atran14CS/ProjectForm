@@ -7,18 +7,18 @@
      * the inital point of the program as soon as window loads
      */
     function init() {
-        document.querySelector('.submitBtn').addEventListener("click", verifyInfromation);
-        document.querySelectorAll('.backBtn').forEach(btn => {
+        document.querySelector('.submitBtn').addEventListener("click", verifyInfromation); //upon submit very information
+        document.querySelectorAll('.backBtn').forEach(btn => { // return main on all back btns
             btn.addEventListener("click", returnMain);
         });
         // document.getElementById('confirmBtn').addEventListener('click', function() { // for PHP Submission
         // document.querySelector('form').submit();
         // });
-        document.getElementById('confirmBtn').addEventListener('click', function() {
+        document.getElementById('confirmBtn').addEventListener('click', function() { // confirmation part
             document.getElementById("confirmModal").classList.add('hidden');
             document.getElementById("successModal").classList.remove('hidden');
         });
-        document.querySelectorAll('.field input, .field select').forEach(field => {
+        document.querySelectorAll('.field input, .field select').forEach(field => { // on an input box will display a hint
         field.addEventListener('focus', () => {
             const hint = field.nextElementSibling;
             if (hint && hint.tagName.toLowerCase() === "p") {
@@ -26,7 +26,7 @@
             }
         });
 
-        field.addEventListener('blur', () => {
+        field.addEventListener('blur', () => { // move out of a box will hide the hint
             const hint = field.nextElementSibling;
             if (hint && hint.tagName.toLowerCase() === "p") {
             hint.classList.add('hidden');
